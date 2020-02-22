@@ -8,7 +8,9 @@ class SchoolsController < ApplicationController
     @schools = has_name ? School.find_by_name(title: params[:name]) : School.all
   end
 
-  def show; end
+  def show
+    @courses = @school.courses 
+  end
 
   def new
     @school = School.new
@@ -33,6 +35,12 @@ class SchoolsController < ApplicationController
       flash[:error] = @school.errors
       render :edit
     end
+  end
+
+  def destroy
+    @school.destroy
+    flash[:notice] = 'Escola Apagada com Sucesso'
+    redirect_to schools_path
   end
 
   private

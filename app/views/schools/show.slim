@@ -9,5 +9,7 @@
         .details
           p.lead= "Email: #{@school.owner_email}"
     .col 
-      
+      .container
+        h1 Cursos
+        = render "layouts/courses_table", courses: @courses
 

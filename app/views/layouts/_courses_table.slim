@@ -1,0 +1,18 @@
+table.table
+  thead
+    tr 
+      th scope="col" Nome 
+      th scope="col" Duração
+
+  tbody
+    - courses.each do |course|
+      tr
+        td= course.title
+        td= course.duration
+        td 
+          = link_to "Ver", course , :class => "btn btn-success"
+        td 
+          = link_to "Editar", edit_course_path(course), :class => "btn btn-warning"
+        td 
+          = link_to "Deletar", course, method: :delete, data: { confirm: "Você tem Certeza ?" }, class: "btn btn-danger"
+        
