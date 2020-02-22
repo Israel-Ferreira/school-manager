@@ -1,0 +1,18 @@
+= form_with(model: school, local: true) do |form|
+  .form-group
+    = form.label :title, "Nome da Escola"
+    = form.text_field :title, :class => "form-control"
+  .form-group
+    = form.label :owner_email, "Email"
+    = form.email_field :owner_email, :class => "form-control"
+  .form-group 
+    = form.label :s_domain, "Subdomínio"
+    = form.text_field :s_domain, :class => "form-control"
+  .form-group
+    = form.label :pitch, "Pitch"
+    = form.text_area :pitch, :class => "form-control"
+
+  .form-group
+    = form.submit 'Adicionar Escola', :class => "btn btn-success"
+    = form.submit 'Limpar Dados', :type => "reset", :class => "btn btn-warning"
+    = link_to "Voltar para Escolas", schools_path, :class => "btn btn-secondary"

@@ -1,0 +1,13 @@
+.container
+  .row
+    .col
+      .jumbotron#school-details
+        h1.display-4=  @school.title
+        - if @school.pitch.present?
+          p.lead= @school.pitch
+
+        .details
+          p.lead= "Email: #{@school.owner_email}"
+    .col 
+      
+

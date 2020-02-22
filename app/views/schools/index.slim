@@ -1,0 +1,12 @@
+.container
+  .row 
+    .col
+      h2 Escolas
+
+  .row 
+    .col
+      = render "schools/table", :schools => @schools
+  
+  .row.actions
+    .col 
+      = link_to "Adicionar Escola", new_school_path, :class => "btn btn-primary"
