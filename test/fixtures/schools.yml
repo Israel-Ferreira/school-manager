@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  owner_email: MyString
+  s_domain: MyString
+  pitch: MyString
+
+two:
+  title: MyString
+  owner_email: MyString
+  s_domain: MyString
+  pitch: MyString
