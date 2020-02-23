@@ -3,12 +3,14 @@ table.table
     tr 
       th scope="col" Nome 
       th scope="col" Duração
+      th scope="col" Escola
 
   tbody
     - courses.each do |course|
       tr
         td= course.title
         td= course.duration
+        td= course.school.title
         td 
           = link_to "Ver", course , :class => "btn btn-success"
         td 

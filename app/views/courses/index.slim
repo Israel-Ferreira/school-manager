@@ -1,0 +1,13 @@
+.container
+  .row 
+    .col
+      h2 Cursos
+
+  .row 
+    .col
+      .table-responsive
+        = render "layouts/courses_table", :courses => @courses
+  
+  .row.actions
+    .col 
+      = link_to "Adicionar Curso", new_course_path, :class => "btn btn-primary"

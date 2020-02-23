@@ -33,7 +33,9 @@ class CoursesController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    @schools = School.all 
+  end
 
   def destroy
     @course.destroy

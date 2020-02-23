@@ -1,0 +1,16 @@
+= form_with(model: course, local: true) do |form|
+  .form-group
+    = form.label :title, "Nome do Curso"
+    = form.text_field :title, :class => "form-control"
+  .form-group
+    = form.label :description, "Descrição"
+    = form.text_area :description, :class => "form-control"
+  .form-group 
+    = form.label :school, "Escola"
+    = form.select :school_id, @schools.pluck(:title,:id),{},{class: 'form-control'}
+ 
+
+  .form-group
+    = form.submit 'Salvar', :class => "btn btn-success btn-spacing"
+    = form.submit 'Limpar Dados', :type => "reset", :class => "btn btn-warning btn-spacing"
+    = link_to "Voltar para Escolas", schools_path, :class => "btn btn-secondary btn-spacing"

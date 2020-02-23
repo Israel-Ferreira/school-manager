@@ -1,11 +1,12 @@
 .container
   .row 
-    .col
+    .col-md-12
       h2 Escolas
 
   .row 
-    .col
-      = render "schools/table", :schools => @schools
+    .col-md-12
+      .table-responsive
+        = render "schools/table", :schools => @schools
   
   .row.actions
     .col 

@@ -18,8 +18,8 @@ class School < ApplicationRecord
   private
 
   def subdomain_is_correct?
-    uri = URI.parser(s_domain)
-    uri.is_a?(URI::HTTP) && !uri.Host.nil?
+    uri = URI.parse(s_domain)
+    uri.is_a?(URI::HTTP) && !uri.host.nil?
   rescue URI::InvalidURIError
     false
   end
