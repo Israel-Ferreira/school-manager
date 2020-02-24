@@ -8,15 +8,14 @@
       = render "courses/search"
 
   .row
+    #search-results
+
+  .row
     .col
       - unless @courses.length == 0
         .table-responsive
           = render "layouts/courses_table", :courses => @courses
-      - else
-        .jumbotron
-          h2.display-4 Não Encontramos o seu curso
-          p.lead Tente de Novo!
-  
+
   .row.actions
     .col 
       = link_to "Adicionar Curso", new_course_path, :class => "btn btn-primary"

@@ -4,8 +4,14 @@ class CoursesController < ApplicationController
   before_action :set_course, only: %i[show edit update destroy]
 
   def index
-    course_name = params[:course_name]
-    @courses = course_name.present? ? Course.find_by_name(course_name) : Course.all
+    if params[:course_name]
+      @courses = Course.find_by_name(params[:course_name])
+      respond_to do |format|
+        format.js { render partial: 'search-results' }
+      end
+    else
+      @courses = Course.all
+    end
   end
 
   def new

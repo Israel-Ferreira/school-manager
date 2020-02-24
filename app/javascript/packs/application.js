@@ -19,3 +19,6 @@ require("bootstrap/dist/js/bootstrap.min")
 
 import 'bootstrap/dist/js/bootstrap'
 import './stylesheets/application.scss'
+
+import $ from 'jquery'
+global.$ = jQuery;

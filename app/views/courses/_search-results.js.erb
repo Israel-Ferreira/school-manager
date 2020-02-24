@@ -1,0 +1,6 @@
+$("#courses-table").remove();
+<% if @courses.length > 0%>
+  $("#search-results").html("<%= escape_javascript(render :partial => 'results') %>");
+<% else %>
+  $("#search-results").html("<%= escape_javascript(render :partial => 'not_found') %>");
+<% end %>
