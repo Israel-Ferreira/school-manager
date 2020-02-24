@@ -1,0 +1,5 @@
+= form_tag(courses_path, :method => :get,:class => "form-inline") do
+  .form-group.mb-2
+    = label_tag :course_name, "Procurar Curso: "
+    = text_field_tag :course_name,"", { class: "form-control"}
+  = submit_tag "Pesquisar", class: "btn btn-primary mb-2"

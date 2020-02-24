@@ -4,12 +4,13 @@ class CoursesController < ApplicationController
   before_action :set_course, only: %i[show edit update destroy]
 
   def index
-    @courses = Course.all
+    course_name = params[:course_name]
+    @courses = course_name.present? ? Course.find_by_name(course_name) : Course.all
   end
 
   def new
     @course = Course.new
-    @schools = School.all 
+    @schools = School.all
   end
 
   def show; end
@@ -34,7 +35,7 @@ class CoursesController < ApplicationController
   end
 
   def edit
-    @schools = School.all 
+    @schools = School.all
   end
 
   def destroy
